@@ -59,7 +59,7 @@ void LBSimpleGaussian::finish(void)
 
 void LBSimpleGaussian::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LBSimpleGaussian.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/LBSimpleGaussian.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "sensitivity", sensitivity);
   cvWriteInt(fs, "noiseVariance", noiseVariance);
@@ -71,7 +71,7 @@ void LBSimpleGaussian::saveConfig()
 
 void LBSimpleGaussian::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LBSimpleGaussian.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/LBSimpleGaussian.xml", 0, CV_STORAGE_READ);
   
   sensitivity = cvReadIntByName(fs, 0, "sensitivity", 66);
   noiseVariance = cvReadIntByName(fs, 0, "noiseVariance", 162);

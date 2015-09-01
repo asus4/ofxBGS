@@ -65,7 +65,7 @@ void DPWrenGABGS::process(const cv::Mat &img_input, cv::Mat &img_output)
 
 void DPWrenGABGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPWrenGABGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/DPWrenGABGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteReal(fs, "threshold", threshold);
   cvWriteReal(fs, "alpha", alpha);
@@ -77,7 +77,7 @@ void DPWrenGABGS::saveConfig()
 
 void DPWrenGABGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPWrenGABGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/DPWrenGABGS.xml", 0, CV_STORAGE_READ);
   
   threshold = cvReadRealByName(fs, 0, "threshold", 12.25f);
   alpha = cvReadRealByName(fs, 0, "alpha", 0.005f);

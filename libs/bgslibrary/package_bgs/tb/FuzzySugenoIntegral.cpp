@@ -152,7 +152,7 @@ void FuzzySugenoIntegral::process(const cv::Mat &img_input, cv::Mat &img_output)
 
 void FuzzySugenoIntegral::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/FuzzySugenoIntegral.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/FuzzySugenoIntegral.xml", 0, CV_STORAGE_WRITE);
   
   cvWriteInt(fs, "showOutput", showOutput);
   cvWriteInt(fs, "framesToLearn", framesToLearn);
@@ -168,7 +168,7 @@ void FuzzySugenoIntegral::saveConfig()
 
 void FuzzySugenoIntegral::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/FuzzySugenoIntegral.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/FuzzySugenoIntegral.xml", 0, CV_STORAGE_READ);
   
   showOutput = cvReadIntByName(fs, 0, "showOutput", true);
   framesToLearn = cvReadIntByName(fs, 0, "framesToLearn", 10);

@@ -60,7 +60,7 @@ void LBMixtureOfGaussians::finish(void)
 
 void LBMixtureOfGaussians::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LBMixtureOfGaussians.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/LBMixtureOfGaussians.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "sensitivity", sensitivity);
   cvWriteInt(fs, "bgThreshold", bgThreshold);
@@ -74,7 +74,7 @@ void LBMixtureOfGaussians::saveConfig()
 
 void LBMixtureOfGaussians::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LBMixtureOfGaussians.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/LBMixtureOfGaussians.xml", 0, CV_STORAGE_READ);
   
   sensitivity = cvReadIntByName(fs, 0, "sensitivity", 81);
   bgThreshold = cvReadIntByName(fs, 0, "bgThreshold", 83);

@@ -44,7 +44,7 @@ void FrameDifferenceBGS::process(const cv::Mat &img_input, cv::Mat &img_output)
 
 void FrameDifferenceBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/FrameDifferenceBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/FrameDifferenceBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "enableThreshold", enableThreshold);
   cvWriteInt(fs, "threshold", threshold);
@@ -55,7 +55,7 @@ void FrameDifferenceBGS::saveConfig()
 
 void FrameDifferenceBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/FrameDifferenceBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/FrameDifferenceBGS.xml", 0, CV_STORAGE_READ);
   
   enableThreshold = cvReadIntByName(fs, 0, "enableThreshold", true);
   threshold = cvReadIntByName(fs, 0, "threshold", 15);

@@ -54,6 +54,8 @@ public:
 	ofPixelsRef getForegroundPixels();
 	ofImage getForegroundImage();
 	cv::Mat& getForegroundMat();
+    cv::Mat& getForegroundBWMat();
+    cv::Mat& getFrameMasked();
 
 	void setProcessor(Processor processor);
 	void nextProcessor();

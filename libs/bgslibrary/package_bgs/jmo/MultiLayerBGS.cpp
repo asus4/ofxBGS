@@ -230,7 +230,7 @@ void MultiLayerBGS::process(const cv::Mat &img_input, cv::Mat &img_output)
 
 void MultiLayerBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/MultiLayerBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/MultiLayerBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteString(fs, "preloadModel", bg_model_preload.c_str());
   cvWriteInt(fs, "saveModel", saveModel);
@@ -271,7 +271,7 @@ void MultiLayerBGS::saveConfig()
 
 void MultiLayerBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/MultiLayerBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/MultiLayerBGS.xml", 0, CV_STORAGE_READ);
   
   bg_model_preload = cvReadStringByName(fs, 0, "preloadModel", "");
   saveModel = cvReadIntByName(fs, 0, "saveModel", false);

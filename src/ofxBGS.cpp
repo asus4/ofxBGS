@@ -116,6 +116,15 @@ cv::Mat& ofxBGS::getForegroundMat() {
 	return foregroundMask;
 }
 
+cv::Mat& ofxBGS::getForegroundBWMat() {
+    return foregroundBW;
+}
+
+cv::Mat& ofxBGS::getFrameMasked() {
+    return frameMasked;
+}
+
+
 ofPixelsRef ofxBGS::getForegroundPixels() {
 	ofxCv::toOf(foregroundMask, foregroundImg);
 	return foregroundImg.getPixelsRef();

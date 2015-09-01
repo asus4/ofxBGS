@@ -67,7 +67,7 @@ void DPEigenbackgroundBGS::process(const cv::Mat &img_input, cv::Mat &img_output
 
 void DPEigenbackgroundBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPEigenbackgroundBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/DPEigenbackgroundBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "threshold", threshold);
   cvWriteInt(fs, "historySize", historySize);
@@ -79,7 +79,7 @@ void DPEigenbackgroundBGS::saveConfig()
 
 void DPEigenbackgroundBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPEigenbackgroundBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/DPEigenbackgroundBGS.xml", 0, CV_STORAGE_READ);
   
   threshold = cvReadIntByName(fs, 0, "threshold", 225);
   historySize = cvReadIntByName(fs, 0, "historySize", 20);

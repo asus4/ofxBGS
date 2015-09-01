@@ -60,7 +60,8 @@ void LBFuzzyGaussian::finish(void)
 
 void LBFuzzyGaussian::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LBFuzzyGaussian.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage
+    ("../../../config/LBFuzzyGaussian.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "sensitivity", sensitivity);
   cvWriteInt(fs, "bgThreshold", bgThreshold);
@@ -74,7 +75,7 @@ void LBFuzzyGaussian::saveConfig()
 
 void LBFuzzyGaussian::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LBFuzzyGaussian.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/LBFuzzyGaussian.xml", 0, CV_STORAGE_READ);
   
   sensitivity = cvReadIntByName(fs, 0, "sensitivity", 72);
   bgThreshold = cvReadIntByName(fs, 0, "bgThreshold", 162);

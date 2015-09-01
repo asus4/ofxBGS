@@ -66,7 +66,7 @@ void DPGrimsonGMMBGS::process(const cv::Mat &img_input, cv::Mat &img_output)
 
 void DPGrimsonGMMBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPGrimsonGMMBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/DPGrimsonGMMBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteReal(fs, "threshold", threshold);
   cvWriteReal(fs, "alpha", alpha);
@@ -78,7 +78,7 @@ void DPGrimsonGMMBGS::saveConfig()
 
 void DPGrimsonGMMBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPGrimsonGMMBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/DPGrimsonGMMBGS.xml", 0, CV_STORAGE_READ);
   
   threshold = cvReadRealByName(fs, 0, "threshold", 9.0);
   alpha = cvReadRealByName(fs, 0, "alpha", 0.01);

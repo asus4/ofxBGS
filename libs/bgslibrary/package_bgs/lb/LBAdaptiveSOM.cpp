@@ -62,7 +62,7 @@ void LBAdaptiveSOM::finish(void)
 
 void LBAdaptiveSOM::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LBAdaptiveSOM.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/LBAdaptiveSOM.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "sensitivity", sensitivity);
   cvWriteInt(fs, "trainingSensitivity", trainingSensitivity);
@@ -77,7 +77,7 @@ void LBAdaptiveSOM::saveConfig()
 
 void LBAdaptiveSOM::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LBAdaptiveSOM.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/LBAdaptiveSOM.xml", 0, CV_STORAGE_READ);
   
   sensitivity          = cvReadIntByName(fs, 0, "sensitivity", 75);
   trainingSensitivity  = cvReadIntByName(fs, 0, "trainingSensitivity", 245);

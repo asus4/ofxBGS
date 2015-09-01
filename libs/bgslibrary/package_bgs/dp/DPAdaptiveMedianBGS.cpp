@@ -65,7 +65,7 @@ void DPAdaptiveMedianBGS::process(const cv::Mat &img_input, cv::Mat &img_output)
 
 void DPAdaptiveMedianBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPAdaptiveMedianBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/DPAdaptiveMedianBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "threshold", threshold);
   cvWriteInt(fs, "samplingRate", samplingRate);
@@ -77,7 +77,7 @@ void DPAdaptiveMedianBGS::saveConfig()
 
 void DPAdaptiveMedianBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPAdaptiveMedianBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/DPAdaptiveMedianBGS.xml", 0, CV_STORAGE_READ);
   
   threshold = cvReadIntByName(fs, 0, "threshold", 40);
   samplingRate = cvReadIntByName(fs, 0, "samplingRate", 7);

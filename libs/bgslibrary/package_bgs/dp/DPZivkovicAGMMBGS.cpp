@@ -65,7 +65,7 @@ void DPZivkovicAGMMBGS::process(const cv::Mat &img_input, cv::Mat &img_output)
 
 void DPZivkovicAGMMBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPZivkovicAGMMBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/DPZivkovicAGMMBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteReal(fs, "threshold", threshold);
   cvWriteReal(fs, "alpha", alpha);
@@ -77,7 +77,7 @@ void DPZivkovicAGMMBGS::saveConfig()
 
 void DPZivkovicAGMMBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPZivkovicAGMMBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("../../../config/DPZivkovicAGMMBGS.xml", 0, CV_STORAGE_READ);
   
   threshold = cvReadRealByName(fs, 0, "threshold", 25.0f);
   alpha = cvReadRealByName(fs, 0, "alpha", 0.001f);
